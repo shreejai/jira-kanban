@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      <h1>Agile Board</h1>
+      <h1 className='mb-2'>Agile Board</h1>
+      <p className="read-the-docs">Create, Drag and Drop tasks just like JIRA</p>
       <KanbanBoard/>
       <Footer/>
     </>
