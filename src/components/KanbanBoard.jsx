@@ -62,11 +62,11 @@ export default function KanbanBoard() {
         value={newTicket}
         onChange={ (e) => setNewTicket(e.target.value) }
         placeholder="Enter new ticket"
-        className="p-2 rounded-lg text-xl flex-grow"
+        className="p-2 rounded-lg text-sm sm:text-lg lg:text-xl flex-grow"
       />
-      <button className="text-xl" onClick={handleAddTicket}>Add Ticket</button>
+      <button className="text-sm sm:text-lg lg:text-xl" onClick={handleAddTicket}>Add Ticket</button>
     </div>
-    <div className="kanbanBoard flex justify-center gap-8">
+    <div className="kanbanBoard flex justify-center gap-3 sm:gap-8 ">
       <Column
         title="Backlog"
         tasks={backlog}
@@ -97,11 +97,11 @@ function Column({title, tasks, onDrop, onDragStart}){
       onDragOver={(e) => e.preventDefault()}
       onDrop={onDrop}
     >
-      <h3 className="font-bold text-2xl">{title}</h3>
+      <h3 className="font-bold text-xs sm:text-xl">{title}</h3>
       {tasks.map((task, index) => (
         <div 
           key={index}
-          className="bg-[#303030] mt-5 px-4 py-2 text-2xl"
+          className="bg-[#303030] mt-5 px-4 py-2 text-base sm:text-xl lg:text-2xl border-l-2 border-[#00d8fe] rounded-lg"
           draggable
           onDragStart={(e) => onDragStart(e, task, title)}
         >
